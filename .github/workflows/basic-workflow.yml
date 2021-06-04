@@ -15,4 +15,4 @@ jobs:
     - name: Build native with Maven
       run: mvn -B package
     - name: Selenium tests
-      uses: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' test
+      uses: mvn -B -Dtest=es.urjc.code.daw.library.e2e.selenium.*Test test
