@@ -6,7 +6,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -15,3 +15,5 @@ jobs:
         java-version: 11
     - name: Build native with Maven
       run: mvn -B package
+    - name: Selenium tests
+      uses: mvn -B '-Dtest=es.urjc.code.daw.library.e2e.selenium.*Test' test
